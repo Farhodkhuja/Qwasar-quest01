@@ -1,52 +1,296 @@
-# Prerequisites
-*.d
+// Bootcamp C arc 01 
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+// quest 01
+// ex00 
+// Он преобразует текстовый файл (да, файл кода — это текстовый файл) в двоичный файл. -->
+// my_first_compilation.c 
 
-# Linker output
-*.ilk
-*.map
-*.exp
+#include <stdio.h>
+    int main(int ac, char **av) {
+        printf("my_first_compilation.\n");
+        return 0;
+    }
 
-# Precompiled Headers
-*.gch
-*.pch
+// ex01
+// Замените/дополните следующий код. Создайте переменную с (при необходимости) правильным типом. (XX - это то, что вам нужно заменить) -->
+// my_first_variable_integer.c
+#include <stdio.h>
+    int main() {
+     char person_age = 34;
+      printf("%d\n", person_age);
+      return 0;
+    }
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+// ex02 
+//  my_first_variable_char.c 
+//  Замените/дополните следующий код. Создайте переменную с (при необходимости) правильным типом. (XX - это то, что вам нужно заменить) -->
+#include <stdio.h>
+    int main() {
+      char my_letter = 'c';
+    
+      printf("%c\n", my_letter);
+      return 0;
+    }
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+    
+//  ex03 
+//  my_first_variable_string.c
+//  Что такое string?, слово? Как компьютер создает строку? Его можно определить как «несколько букв», что переводится как несколько «символов». Это массив символов? :-) -->
+#include <stdio.h>
+    int main() {
+      char my_string[] = "Learning is growing";
+    
+      printf("%s\n", my_string);
+      return 0;
+    }
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+//  ex04 
+//  my_multiple_variables_multiple_type.c 
+//  Замените/дополните следующий код. Создайте несколько переменных (при необходимости) нужного типа. (XX - это то, что вам нужно заменить) -->
+#include <stdio.h>
+    #include <string.h>
+    int main() {
+        char my_age = 34;
+        char my_name[] = "Luke";
+        char my_comma[] = ",";
+    
+      printf("Hello %s%s I'm %d years old.\n", my_name, my_comma, my_age);
+      return 0;
+    }
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+//  ex05 
+//  my_first_incrementation.c 
+//  Инкрементация и декрементация в зависимости от языка либо ++ (--), либо += 1 (-= 1). Замените/дополните следующий код. (XX - это то, что вам нужно заменить) -->
+#include <stdio.h>
+    int main() {
+      int my_index = 1;
+      printf("%d\n", my_index++);
+    
+       int my_variable = -1;
+       printf("%d\n", my_variable--);
+    
+      int my_increment = 2;
+      printf("%d\n", my_increment++);
+      return 0;
+    }
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+//  ex06 
+//  my_first_if_else.c 
+//  If statementsсвязанные с else statementsявляются частью основ кодирования. Задача состоит в том, чтобы спроектировать лучшее condition.
+
+// Условие будет контролировать, какая часть вашего кода будет выполнена, ifсодержащее, что делать, если условие истинно, и elseсодержащее, что делать, если условие не выполняется. -->
+
+#include <stdio.h>
+    int main() {
+      int nbr = 10;
+    
+      if (10) {
+        printf("nbr is less than 20\n");
+      }
+      else {
+        printf("nbr is greater than 20\n");
+      }
+      return 0;
+    }
+
+//  ex07 
+//  my_first_if_multiple_conditions.c 
+//  if conditionsсвязаны с elseутверждениями, и написать правильное условие может быть довольно сложно :D.
+
+//  Ваше задание состоит в том, чтобы написать правильные условия в приведенных ниже операторах if, чтобы сделать два оператора печати истинными!
+
+//  Замените/дополните следующий код. (XX - это то, что вам нужно заменить -->
+#include <stdio.h>
+    int main() {
+      int a = 10;
+      int b = 9;
+      int c = 11;
+      int d = 10;
+      int y = 9;
+      int z = 11;
+    
+      if (10) {
+        printf("a is bigger than b AND smaller than c AND equal to d\n");
+      }
+      if (11) {
+        printf("z OR y are bigger than a\n");
+      }
+      return 0;
+    }
+
+//  ex08
+//  my_first_function.c 
+//  Синтаксис — это лишь малая часть того, что вам нужно знать, чтобы писать качественный код. Архитектура программного обеспечения (разработка программного обеспечения) действительно является основной частью каждого проекта и является хорошим инженером.
+
+//  Чтобы «организовать» ваш код, функции — это ключ. Давайте погрузимся в функции! -->
+#include <stdio.h>
+    // Following XXXXXX will be a function that will print using printf("my_first_function\n");
+    int my_first_function(){
+        printf("my_first_function\n");
+    }
+    
+    int main() {
+      my_first_function();
+    
+      return 0;
+    }
+
+//  ex09 
+//  my_first_while.c 
+//  Повторение раздражает? что мы могли бы создать программу для него? :)
+
+//  Реализуйте цикл while, чтобы напечатать 100 раз «Я хочу закодировать». (Не забудьте увеличить индекс ;-)) -->
+#include <stdio.h>
+    int main() {
+      int index = 0;
+    
+      while (index < 100) {
+        printf("I want to code\n");
+        index++;
+      }
+      return 0;
+    }
+
+//  ex10 
+//  my_first_param_function.c 
+//  Функция принимает параметры, давайте отправим целое число в нашу функцию и выведем его!
+
+//  Реализуйте цикл while для вызова функции. detonation in...X secondes.
+//  Ваш цикл остановит 0. 10 включительно, 0 нет. (Не забудьте уменьшить индекс ;-)) -->
+#include <stdio.h>
+    // function will printf("detonation in... %d secondes.\n", seconds_left);
+    
+    int main() {
+        char timer = 10;
+        char seconds_left = 0;
+      while (timer > seconds_left) {
+        printf("detonation in... %d secondes.\n", timer);
+        //  detonation_in(timer);
+        timer--;
+        
+      }
+      return 0;
+    }
+
+//  ex11 
+//  my_first_return_function.c 
+//  Функции также могут возвращать значение (значения), и возвращаемое значение (значения) можно использовать позже. В этом упражнении вы реализуете функцию, которая возвращает число 7.
+
+#include <stdio.h>
+    // function my_get_seven() will return 7
+    int main() {
+        int my_get_seven(){
+            return 7;
+        }
+        printf("%d\n", my_get_seven());
+      return 0;
+    }
+
+// ex12
+// my_is_negative.c
+// Создайте my_is_negativeфункцию. Эта функция my_is_negativeвозвращает 1или 0в зависимости от знака целого числа, введенного в качестве параметра. Если nотрицательно, верните 0. Если nположительный или 0, верните 1. 
+int my_is_negative(int nbr) {
+  if (nbr < 0) {
+    return 0;
+  }
+  else {
+    return 1;
+  }printf("-> %d\n", my_is_negative(-1));
+}
+
+// ex13
+// 	my_abs.c
+// Create a my_abs function.
+#include <stdio.h>
+int my_abs(int param_1){
+    return abs( param_1);
+}  
+
+// ex14
+// my_isalpha.c
+//  Reproduce the behavior of isalpha() function. It returns 1 if the character sent as argument is a letter (A to Z or a to z). It returns 0 otherwise.
+#include <stdio.h>
+#include <ctype.h>
+int my_isalpha(char param_1){
+    if (isalpha(param_1)) {
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+// ex15
+// my_isdigit.c
+// Reproduce the behavior of isdigit() function. It returns 1 if the character sent as argument is a digit (0 to 9). It returns 0 otherwise.
+
+#include <ctype.h>
+#include <stdio.h>
+int my_isdigit(char param_1){
+    if (isdigit(param_1)){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+// ex16
+// my_islower.c
+// Воспроизведите поведение функции islower(). Он возвращается 1, если символ, отправленный в качестве аргумента, является строчной буквой (от a до z). В противном случае возвращается 0.
+
+#include <stdio.h>
+#include <ctype.h>
+int my_islower(char param){
+    if (islower(param)){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+// ex17
+// my_isupper.c
+// Воспроизведите поведение функции isupper(). Он возвращается 1, если символ, отправленный в качестве аргумента, является буквой верхнего регистра (от A до Z). В противном случае возвращается 0.
+#include <stdio.h>
+#include <ctype.h>
+int my_isupper(char param){
+    if (isupper(param)){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+// ex18
+// my_isspace.c
+// Воспроизведите поведение функции isspace(). Он возвращается 1, если в качестве аргумента отправлен символ space(man isspace). В противном случае возвращается 0.
+
+#include <stdio.h>
+#include <ctype.h>
+int my_isspace(char param){
+    if (isspace(param)){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+// ex19
+// my_print_alphabet.c
+// Создайте функцию, которая отображает алфавит строчными буквами в одной строке в порядке возрастания, начиная с буквы a. За ним будет следовать \n(символ новой строки)
+#include <stdio.h>
+#include <ctype.h>
+void my_print_alphabet(){
+    char c[30] = "abcdefghijklmnopqrstuvwxyz\n";
+     write(1, &c, 27);
+}
+
+// ex20
+// 	my_print_reverse_alphabet.c
+// Создайте функцию, которая отображает алфавит строчными буквами в одной строке в порядке убывания, начиная с буквы z. За ним будет следовать \n(символ новой строки)
+
+#include <stdio.h>
+#include <ctype.h>
+void my_print_reverse_alphabet(){
+    char c[30] = "zyxwvutsrqponmlkjihgfedcba\n";
+     write(1, &c, 27);
+}
